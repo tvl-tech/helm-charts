@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  lint:
+    working_directory: ~/app
+    docker:
+      - image: chudi/aks-helm
+    steps:
+      - run: 
+          name: Install GIT and SSH client
+          command: apk add --update openssh-client git
+      - checkout
+      - run:
+          name: Lint charts
+          command: |
+            chmod +x ./lint.sh && ./lint.sh
+workflows:
+  version: 2
+  lint:
+    jobs:
+      - lint
