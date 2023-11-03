@@ -33,12 +33,6 @@ spec:
               containerPort: 80
               protocol: TCP
           env:
-            - name: SERVICE_NAME
-              value: {{ .Chart.Name }}
-            - name: NODE_ENV
-              value: {{ .Values.app.node_env }}
-            - name: PORT
-              value: {{ .Values.app.port | quote }}
             {{- range $env := .Values.app.commonEnv }}
             - name: {{ $env | upper }}
               valueFrom:
