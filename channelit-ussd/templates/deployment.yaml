@@ -21,7 +21,7 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/path: /metrics
-        prometheus.io/port: "8000"
+        prometheus.io/port: "80"
         updatedAt: {{ now | quote }}
     spec:
       initContainers:
@@ -46,7 +46,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 80
               protocol: TCP
           env:
             {{- range $env := .Values.app.commonEnv }}
@@ -63,16 +63,16 @@ spec:
                   name: channelit-ussd
                   key: {{ $env }}
             {{- end }}
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: 8000
-          #   initialDelaySeconds: 30
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: 8000
-          #   initialDelaySeconds: 30
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
           resources:
             {{- toYaml .Values.app.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
