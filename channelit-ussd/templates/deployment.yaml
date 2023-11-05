@@ -45,7 +45,7 @@ spec:
           image: "{{ .Values.image.repository }}/web:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
+            - name: tcp
               containerPort: 8000
               protocol: TCP
           env:
@@ -66,12 +66,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: 8000
             initialDelaySeconds: 15
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: 8000
             initialDelaySeconds: 15
           resources:
             {{- toYaml .Values.app.resources | nindent 12 }}
