@@ -28,6 +28,10 @@ app:
     - db_database
     - db_username
     - db_password
+    - cp_name
+    - cp_id
+    - cp_password
+    - se_url
     # - redis_host
     # - redis_port
     # - redis_password
