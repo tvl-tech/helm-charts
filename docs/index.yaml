@@ -3,9 +3,9 @@ entries:
   channelit-gateway:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-11-17T08:09:28.773927+01:00"
+    created: "2023-11-28T11:26:00.648699+01:00"
     description: A Helm chart for Channel IT Aggregator Gateway Service
-    digest: f272fc6bbcba37dad9d29448808d191562c6d413a2010cfc2e5292b61a0f71dd
+    digest: 9608b35a877757fe531c03c1bc1475ae64a86144958a8db53de1ddb256c7a467
     name: channelit-gateway
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-gateway-0.1.0.tgz
@@ -13,11 +13,11 @@ entries:
   channelit-ussd:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-11-17T08:09:28.77435+01:00"
+    created: "2023-11-28T11:26:00.649159+01:00"
     description: A Helm chart for Channel IT Aggregator Ussd Service
-    digest: c8d45b477771b86e8e51a171aa2dca54130186e8726cdd409953d36594a67dc2
+    digest: a12bd09d367efc80d88af5a8c92e0a66dc22853a5234394b48b21f0aa179e21c
     name: channelit-ussd
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-ussd-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-17T08:09:28.772201+01:00"
+generated: "2023-11-28T11:26:00.644143+01:00"

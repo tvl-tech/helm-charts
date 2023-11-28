@@ -17,6 +17,11 @@ app:
     - redis_url
     - redis_password
     - gateman_key
+    - db_host
+    - db_port
+    - db_servicename
+    - db_username
+    - db_password
   # Environment variables specific to this service
   env:
     - jwt_secret
