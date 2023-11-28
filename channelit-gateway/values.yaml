@@ -26,6 +26,7 @@ app:
   env:
     - jwt_secret
     - default_otp
+    - sms_outbound_url
 
   resources:
     limits:
