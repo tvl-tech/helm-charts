@@ -24,6 +24,34 @@ spec:
         prometheus.io/port: "80"
         updatedAt: {{ now | quote }}
     spec:
+      initContainers:
+        - name: {{ .Chart.Name }}-prep
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command:
+            - yarn
+          args:
+            - migrate:up
+          env:
+            - name: SERVICE_NAME
+              value: {{ .Chart.Name }}
+            - name: NODE_ENV
+              value: {{ .Values.app.node_env }}
+            - name: PORT
+              value: {{ .Values.app.port | quote }}
+            {{- range $env := .Values.app.commonEnv }}
+            - name: {{ $env | upper }}
+              valueFrom:
+                secretKeyRef:
+                  name: channelit-common
+                  key: {{ $env }}
+            {{- end }}
+            {{- range $env := .Values.app.env }}
+            - name: {{ $env | upper }}
+              valueFrom:
+                secretKeyRef:
+                  name: channelit-gateway
+                  key: {{ $env }}
+            {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
