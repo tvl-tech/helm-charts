@@ -27,10 +27,7 @@ spec:
       initContainers:
         - name: {{ .Chart.Name }}-prep
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command:
-            - yarn
-          args:
-            - migrate:up
+          command: ["yarn", "migrate:up"]
           env:
             - name: SERVICE_NAME
               value: {{ .Chart.Name }}
