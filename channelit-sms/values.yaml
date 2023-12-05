@@ -24,6 +24,11 @@ app:
     - db_password
     - madapi_api_key
     - madapi_api_secret
+    - aws_region
+    - aws_secret_key
+    - aws_access_key
+    - aws_sns_base_arn
+    - aws_sqs_base_url
   # Environment variables specific to this service
   env:
     - jwt_secret
