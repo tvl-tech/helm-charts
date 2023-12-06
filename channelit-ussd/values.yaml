@@ -37,6 +37,8 @@ app:
     - cp_id
     - cp_password
     - se_url
+    - log_channel
+    - log_level
 
   resources:
     limits:

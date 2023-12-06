@@ -24,22 +24,6 @@ spec:
         prometheus.io/port: "80"
         updatedAt: {{ now | quote }}
     spec:
-      initContainers:
-        - name: {{ .Chart.Name }}-route-cache
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command:
-            - php
-          args:
-            - artisan
-            - route:cache
-          env:
-            {{- range $env := .Values.app.commonEnv }}
-            - name: {{ $env | upper }}
-              valueFrom:
-                secretKeyRef:
-                  name: channelit-common
-                  key: {{ $env }}
-            {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
