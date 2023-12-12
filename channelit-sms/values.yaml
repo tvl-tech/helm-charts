@@ -33,6 +33,8 @@ app:
     - jwt_secret
     - default_otp
     - sms_outbound_url
+    - gateway_service_url
+    - gateway_service_api_version
 
   resources:
     limits:
