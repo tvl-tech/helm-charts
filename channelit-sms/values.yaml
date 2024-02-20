@@ -35,6 +35,8 @@ app:
     - sms_outbound_url
     - gateway_service_url
     - gateway_service_api_version
+    - subscription_service_url
+    - subscription_service_api_version
 
   resources:
     limits:
