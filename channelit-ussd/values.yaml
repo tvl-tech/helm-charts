@@ -39,6 +39,8 @@ app:
     - se_url
     - log_channel
     - log_level
+    - gateway_service_url
+    - gateway_service_api_version
 
   resources:
     limits:
