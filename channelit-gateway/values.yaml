@@ -28,6 +28,8 @@ app:
     - aws_access_key
     - aws_sns_base_arn
     - aws_sqs_base_url
+    - encrypt_secret
+    - encrypt_secret_iv
     
   # Environment variables specific to this service
   env:
