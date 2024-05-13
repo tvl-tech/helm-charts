@@ -43,10 +43,10 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 300Mi
+      memory: 250Mi
     requests:
       cpu: 100m
-      memory: 250Mi
+      memory: 200Mi
 
 worker:
   port: 4003
