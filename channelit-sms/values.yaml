@@ -11,7 +11,7 @@ image:
 
 app:
   port: 80
-  # Shared environment variables within Go Money
+  # Shared environment variables within Channel IT
   commonEnv:
     - redis_url
     - redis_password
@@ -42,8 +42,8 @@ app:
 
   resources:
     limits:
-      cpu: 350m
-      memory: 500Mi
+      cpu: 100m
+      memory: 300Mi
     requests:
       cpu: 100m
       memory: 250Mi
