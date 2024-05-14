@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "channelit-ussd.name" . }}
+    app.kubernetes.io/name: {{ include "channelit-utility.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
