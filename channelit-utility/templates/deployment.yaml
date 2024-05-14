@@ -1,45 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "channelit-gateway.fullname" . }}-worker
+  name: {{ include "channelit-utility.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "channelit-gateway.name" . }}
-    helm.sh/chart: {{ include "channelit-gateway.chart" . }}
+    app.kubernetes.io/name: {{ include "channelit-utility.name" . }}
+    helm.sh/chart: {{ include "channelit-utility.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  replicas: {{ .Values.worker.replicaCount }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "channelit-gateway.name" . }}-worker
-      app.kubernetes.io/instance: {{ .Release.Name }}-worker
+      app.kubernetes.io/name: {{ include "channelit-utility.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "channelit-gateway.name" . }}-worker
-        app.kubernetes.io/instance: {{ .Release.Name }}-worker
+        app.kubernetes.io/name: {{ include "channelit-utility.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
       annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /metrics
+        prometheus.io/port: "80"
         updatedAt: {{ now | quote }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}-worker
+        - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["yarn"]
-          args: ["start:worker"]
           ports:
-            - name: workerhttp
-              containerPort: {{ .Values.worker.port }}
+            - name: http
+              containerPort: 80
               protocol: TCP
           env:
-            - name: SERVICE_NAME
-              value: {{ .Chart.Name }}-worker
-            - name: NODE_ENV
-              value: {{ .Values.app.node_env }}
-            - name: PORT
-              value: {{ .Values.app.port | quote }}
-            - name: WORKER_PORT
-              value: {{ .Values.worker.port | quote }}
             {{- range $env := .Values.app.commonEnv }}
             - name: {{ $env | upper }}
               valueFrom:
@@ -51,16 +44,21 @@ spec:
             - name: {{ $env | upper }}
               valueFrom:
                 secretKeyRef:
-                  name: channelit-gateway
+                  name: channelit-utility
                   key: {{ $env }}
             {{- end }}
           livenessProbe:
             httpGet:
               path: /
-              port: workerhttp
+              port: http
+            initialDelaySeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
             initialDelaySeconds: 15
           resources:
-            {{- toYaml .Values.worker.resources | nindent 12 }}
+            {{- toYaml .Values.app.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
