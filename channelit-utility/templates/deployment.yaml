@@ -21,7 +21,7 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/path: /metrics
-        prometheus.io/port: "8000"
+        prometheus.io/port: "80"
         updatedAt: {{ now | quote }}
     spec:
       containers:
@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 80
               protocol: TCP
           env:
             {{- range $env := .Values.app.commonEnv }}
