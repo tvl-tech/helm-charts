@@ -32,7 +32,6 @@ spec:
             - sqs-fifo
             - --tries=3
             - --max-time=3600
-            - --max-jobs=200
           ports:
             - name: workerhttp
               containerPort: {{ .Values.worker.port }}
@@ -58,6 +57,13 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: channelit-utility
+                  key: {{ $env }}
+            {{- end }}
+            {{- range $env := .Values.worker.env }}
+            - name: {{ $env | upper }}
+              valueFrom:
+                secretKeyRef:
+                  name: channelit-utility-worker
                   key: {{ $env }}
             {{- end }}
           livenessProbe:
