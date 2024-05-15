@@ -30,6 +30,7 @@ spec:
             - artisan
             - queue:work
             - sqs-fifo
+            - --queue=TelcoUtilityVendingQueue.fifo
             - --tries=3
             - --max-time=3600
           ports:
