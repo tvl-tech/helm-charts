@@ -54,7 +54,7 @@ worker:
   port: 4003
   replicaCount: 1
   env:
-    - sqs-queue
+    - sqs_queue
   resources:
     limits:
       cpu: 100m

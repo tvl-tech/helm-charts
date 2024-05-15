@@ -21,13 +21,6 @@ spec:
       annotations:
         updatedAt: {{ now | quote }}
     spec:
-      initContainers:
-        - name: {{ .Chart.Name }}-worker-clear-cache
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: ["php"]
-          args:
-            - artisan
-            - optimize:clear
       containers:
         - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
