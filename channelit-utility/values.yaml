@@ -48,6 +48,17 @@ app:
     requests:
       cpu: 100m
       memory: 250Mi
+      
+worker:
+  port: 4003
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 100m
+      memory: 230Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
 
 nameOverride: ""
 fullnameOverride: ""
