@@ -10,7 +10,7 @@ image:
   pullPolicy: Always
 
 app:
-  port: 80
+  port: 8000
   # Shared environment variables within Channel IT
   commonEnv:
     - redis_url
