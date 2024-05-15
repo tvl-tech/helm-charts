@@ -27,7 +27,7 @@ spec:
           command: ["php"]
           args:
             - artisan
-            - config:clear
+            - optimize:clear
       containers:
         - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
