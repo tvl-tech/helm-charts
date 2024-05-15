@@ -14,6 +14,7 @@ app:
   # Shared environment variables within Channel IT
   commonEnv:
     - redis_url
+    - redis_host
     - redis_password
     - gateman_key
     - db_host
