@@ -68,7 +68,7 @@ spec:
             httpGet:
               path: /
               port: workerhttp
-            initialDelaySeconds: 15
+            initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.worker.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
