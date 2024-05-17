@@ -32,15 +32,15 @@ spec:
           #   - sqs-fifo
           #   - --tries=3
           #   - --max-time=3600
-          ports:
-            - name: workerhttp
-              containerPort: {{ .Values.worker.port }}
-              protocol: TCP
+          # ports:
+          #   - name: workerhttp
+          #     containerPort: {{ .Values.worker.port }}
+          #     protocol: TCP
           env:
             - name: CONTAINER_MODE
               value: worker
             - name: WORKER_COMMAND
-              value: "php artisan queue:work sqs-fifo --tries=3 --max-time=3600"
+              value: "php artisan queue:work sqs-fifo --sleep=3 --tries=3 --max-time=3600"
             - name: SERVICE_NAME
               value: {{ .Chart.Name }}-worker
             {{- range $env := .Values.app.commonEnv }}
@@ -64,11 +64,11 @@ spec:
                   name: channelit-utility-worker
                   key: {{ $env }}
             {{- end }}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: workerhttp
-            initialDelaySeconds: 30
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: workerhttp
+          #   initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.worker.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
