@@ -25,26 +25,24 @@ spec:
         - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["php"]
-          args:
-            - artisan
-            - queue:work
-            - sqs-fifo
-            - --tries=3
-            - --max-time=3600
+          # command: ["php"]
+          # args:
+          #   - artisan
+          #   - queue:work
+          #   - sqs-fifo
+          #   - --tries=3
+          #   - --max-time=3600
           ports:
             - name: workerhttp
               containerPort: {{ .Values.worker.port }}
               protocol: TCP
           env:
+            - name: CONTAINER_MODE
+              value: worker
+            - name: WORKER_COMMAND
+              value: "php artisan queue:work sqs-fifo --tries=3 --max-time=3600"
             - name: SERVICE_NAME
               value: {{ .Chart.Name }}-worker
-            - name: NODE_ENV
-              value: {{ .Values.app.node_env }}
-            - name: PORT
-              value: {{ .Values.app.port | quote }}
-            - name: WORKER_PORT
-              value: {{ .Values.worker.port | quote }}
             {{- range $env := .Values.app.commonEnv }}
             - name: {{ $env | upper }}
               valueFrom:
