@@ -41,6 +41,8 @@ app:
     - log_level
     - gateway_service_url
     - gateway_service_api_version
+    - vend_adaptor_base_url
+    - vend_key
 
   resources:
     limits:
