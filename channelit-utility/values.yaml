@@ -10,7 +10,7 @@ image:
   pullPolicy: Always
 
 app:
-  port: 8000
+  port: 80
   # Shared environment variables within Channel IT
   commonEnv:
     - redis_url
@@ -54,7 +54,7 @@ app:
       memory: 250Mi
 
 worker:
-  port: 8000
+  port: 80
   replicaCount: 1
   env:
     - sqs_queue
