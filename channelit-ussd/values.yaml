@@ -36,6 +36,7 @@ app:
     - app_name
     - app_env
     - app_key
+    - madapi_base_url
     - cp_name
     - cp_id
     - cp_password
