@@ -25,14 +25,14 @@ spec:
         - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["php"]
-          args:
-            - artisan
-            - queue:work
-            - sqs-fifo
-            - --sleep=3
-            - --tries=3
-            - --max-time=3600
+          # command: ["php"]
+          # args:
+          #   - artisan
+          #   - queue:work
+          #   - sqs-fifo
+          #   - --sleep=3
+          #   - --tries=3
+          #   - --max-time=3600
           # ports:
           #   - name: workerhttp
           #     containerPort: {{ .Values.worker.port }}
