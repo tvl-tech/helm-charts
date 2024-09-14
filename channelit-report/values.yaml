@@ -1,4 +1,4 @@
-# Default values for channelit-gateway service.
+# Default values for channelit-report service.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -21,45 +21,28 @@ app:
     - db_servicename
     - db_username
     - db_password
-    - madapi_api_key
-    - madapi_api_secret
-    - aws_region
-    - aws_secret_key
-    - aws_access_key
-    - aws_sns_base_arn
-    - aws_sqs_base_url
     - encrypt_secret
     - encrypt_secret_iv
     
   # Environment variables specific to this service
   env:
-    - jwt_secret
-    - default_otp
-    - sms_outbound_url
+    - app_name
+    - app_env
+    - app_key
+    - log_channel
+    - log_level
+    - gateway_service_url
+    - gateway_service_api_version
     - subscription_service_url
     - subscription_service_api_version
-    - utility_service_url
-    - utility_service_api_version
-    - otp_allow_list
 
   resources:
     limits:
-      cpu: 100m
+      cpu: 200m
       memory: 300Mi
     requests:
       cpu: 100m
       memory: 250Mi
-
-worker:
-  port: 4003
-  replicaCount: 1
-  resources:
-    limits:
-      cpu: 100m
-      memory: 230Mi
-    requests:
-      cpu: 100m
-      memory: 200Mi
 
 nameOverride: ""
 fullnameOverride: ""
