@@ -41,6 +41,8 @@ app:
     - utility_service_url
     - utility_service_api_version
     - otp_allow_list
+    - report_service_url
+    - report_service_api_version
 
   resources:
     limits:
