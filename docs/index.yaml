@@ -3,7 +3,7 @@ entries:
   channelit-gateway:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-09-14T20:27:28.280752+01:00"
+    created: "2024-09-15T08:05:23.809753+01:00"
     description: A Helm chart for Channel IT Aggregator Gateway Service
     digest: 14e3ae85848b4381391c242aa843579609f04a8f48d838b15dc4cd95b5399a05
     name: channelit-gateway
@@ -13,7 +13,7 @@ entries:
   channelit-report:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-09-14T20:27:28.281888+01:00"
+    created: "2024-09-15T08:05:23.810593+01:00"
     description: A Helm chart for Channel IT Aggregator Reporting Service
     digest: ca7a4b763805cf3b2000bb59e28db711aeb9c03ef1735cb0719b6f19d6c7c6e8
     name: channelit-report
@@ -23,7 +23,7 @@ entries:
   channelit-sms:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-09-14T20:27:28.283037+01:00"
+    created: "2024-09-15T08:05:23.811526+01:00"
     description: A Helm chart for Channel IT Aggregator SMS Service
     digest: 7f43e0b507a427524372641d35c19822efa9825ba1fe08864e27a8060f8764b7
     name: channelit-sms
@@ -33,9 +33,9 @@ entries:
   channelit-ussd:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-09-14T20:27:28.28409+01:00"
+    created: "2024-09-15T08:05:23.812008+01:00"
     description: A Helm chart for Channel IT Aggregator Ussd Service
-    digest: 978f35837837df62bb72517f0ab7643a72561c602b1af690073f90dd89e24d9c
+    digest: f3bf81e1ddddf48e1cedb60041d8558c467ffbf7e7b026bef93a548f24f8102e
     name: channelit-ussd
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-ussd-0.1.0.tgz
@@ -43,11 +43,11 @@ entries:
   channelit-utility:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-09-14T20:27:28.285882+01:00"
+    created: "2024-09-15T08:05:23.812971+01:00"
     description: A Helm chart for Channel IT Aggregator utility Service
     digest: 6ed34a9cc0b54ee35a035776804b82fdfe7caa7ddafa4501c5451183d2b46c69
     name: channelit-utility
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-utility-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-14T20:27:28.279943+01:00"
+generated: "2024-09-15T08:05:23.808238+01:00"
