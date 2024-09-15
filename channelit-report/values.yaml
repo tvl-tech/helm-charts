@@ -35,6 +35,10 @@ app:
     - gateway_service_api_version
     - subscription_service_url
     - subscription_service_api_version
+    - aws_bucket
+    - aws_default_region
+    - aws_access_key_id
+    - aws_secret_access_key
 
   resources:
     limits:
