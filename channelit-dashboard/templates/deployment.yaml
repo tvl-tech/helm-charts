@@ -49,12 +49,12 @@ spec:
             {{- end }}
           livenessProbe:
             httpGet:
-              path: /
+              path: /index.html
               port: http
             initialDelaySeconds: 15
           readinessProbe:
             httpGet:
-              path: /
+              path: /index.html
               port: http
             initialDelaySeconds: 15
           resources:
