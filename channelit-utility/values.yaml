@@ -47,10 +47,10 @@ app:
 
   resources:
     limits:
-      cpu: 100m
+      cpu: 50m
       memory: 300Mi
     requests:
-      cpu: 100m
+      cpu: 25m
       memory: 250Mi
 
 worker:
@@ -60,10 +60,10 @@ worker:
     - sqs_queue
   resources:
     limits:
-      cpu: 100m
+      cpu: 50m
       memory: 230Mi
     requests:
-      cpu: 100m
+      cpu: 25m
       memory: 200Mi
 
 nameOverride: ""

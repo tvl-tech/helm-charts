@@ -26,10 +26,10 @@ app:
 
   resources:
     limits:
-      cpu: 128m
+      cpu: 30m
       memory: 200Mi
     requests:
-      cpu: 100m
+      cpu: 20m
       memory: 200Mi
 
 nameOverride: ""
