@@ -57,11 +57,11 @@ worker:
   replicaCount: 1
   resources:
     limits:
-      cpu: 100m
-      memory: 230Mi
+      cpu: 120m
+      memory: 150Mi
     requests:
-      cpu: 100m
-      memory: 200Mi
+      cpu: 50m
+      memory: 100Mi
 
 nameOverride: ""
 fullnameOverride: ""
