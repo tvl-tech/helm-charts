@@ -51,7 +51,7 @@ app:
       memory: 200Mi
     requests:
       cpu: 25m
-      memory: 250Mi
+      memory: 100Mi
 
 worker:
   port: 80
@@ -61,10 +61,10 @@ worker:
   resources:
     limits:
       cpu: 50m
-      memory: 230Mi
+      memory: 200Mi
     requests:
       cpu: 25m
-      memory: 200Mi
+      memory: 100Mi
 
 nameOverride: ""
 fullnameOverride: ""
