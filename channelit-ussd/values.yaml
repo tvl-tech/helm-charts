@@ -50,10 +50,10 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 300Mi
+      memory: 220Mi
     requests:
       cpu: 50m
-      memory: 250Mi
+      memory: 180Mi
 
 nameOverride: ""
 fullnameOverride: ""
