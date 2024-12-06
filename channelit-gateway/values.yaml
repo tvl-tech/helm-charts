@@ -47,20 +47,20 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 300Mi
+      memory: 200Mi
     requests:
-      cpu: 100m
-      memory: 250Mi
+      cpu: 25m
+      memory: 150Mi
 
 worker:
   port: 4003
   replicaCount: 1
   resources:
     limits:
-      cpu: 120m
+      cpu: 50m
       memory: 150Mi
     requests:
-      cpu: 50m
+      cpu: 15m
       memory: 100Mi
 
 nameOverride: ""

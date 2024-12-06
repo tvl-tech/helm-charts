@@ -43,10 +43,10 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 250Mi
-    requests:
-      cpu: 100m
       memory: 200Mi
+    requests:
+      cpu: 50m
+      memory: 125Mi
 
 worker:
   port: 4003
@@ -54,10 +54,10 @@ worker:
   resources:
     limits:
       cpu: 100m
-      memory: 150Mi
+      memory: 200Mi
     requests:
       cpu: 50m
-      memory: 100Mi
+      memory: 150Mi
 
 nameOverride: ""
 fullnameOverride: ""
