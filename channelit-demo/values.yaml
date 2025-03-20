@@ -26,6 +26,8 @@ app:
     - db_name
     - db_username
     - db_password
+    - adjutor_api_key
+    - adjutor_base_url
 
   resources:
     limits:
