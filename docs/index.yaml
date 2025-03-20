@@ -3,17 +3,27 @@ entries:
   channelit-dashboard:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.8855931+01:00"
+    created: "2025-03-20T16:22:16.8490662+01:00"
     description: A Helm chart for Channel IT Aggregator dashboard
     digest: e15f532529b6614d07457ad1c8e896f06e8fdcc42bb8eae866bca933ecffb8ee
     name: channelit-dashboard
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-dashboard-0.1.0.tgz
     version: 0.1.0
+  channelit-demo:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2025-03-20T16:22:16.8503584+01:00"
+    description: A Helm chart for Demo Credit Service
+    digest: 47dc504fc37a6b5352689c40f87d4882778785b1b7ccfdc30a75e4f210da19ec
+    name: channelit-demo
+    urls:
+    - https://tvl-tech.github.io/helm-charts/channelit-demo-0.1.0.tgz
+    version: 0.1.0
   channelit-gateway:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.8924884+01:00"
+    created: "2025-03-20T16:22:16.851822+01:00"
     description: A Helm chart for Channel IT Aggregator Gateway Service
     digest: 5ce8ceda38b6f1d3968b4cb2e23f2e858fef02e899bfbbd9d949418d82bdbc07
     name: channelit-gateway
@@ -23,7 +33,7 @@ entries:
   channelit-report:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.9031699+01:00"
+    created: "2025-03-20T16:22:16.853065+01:00"
     description: A Helm chart for Channel IT Aggregator Reporting Service
     digest: 883238866825741db935d30d949d870e2b199de1b823adb29aa9770e925f172f
     name: channelit-report
@@ -33,7 +43,7 @@ entries:
   channelit-sms:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.9250432+01:00"
+    created: "2025-03-20T16:22:16.853598+01:00"
     description: A Helm chart for Channel IT Aggregator SMS Service
     digest: 6099717a3d895cb93fb134224e97edfba20aa1264cdb90fe4f59811d366f9e30
     name: channelit-sms
@@ -43,7 +53,7 @@ entries:
   channelit-ussd:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.9374223+01:00"
+    created: "2025-03-20T16:22:16.8542005+01:00"
     description: A Helm chart for Channel IT Aggregator Ussd Service
     digest: 836bc414463b43a3cafe5cdfb316c52ba145bf75ac15c0121b1be125ec8f0360
     name: channelit-ussd
@@ -53,11 +63,11 @@ entries:
   channelit-utility:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2025-03-20T14:35:24.9517953+01:00"
+    created: "2025-03-20T16:22:16.8556174+01:00"
     description: A Helm chart for Channel IT Aggregator utility Service
     digest: 87e466f383c94a3690fd53608606ad1a58209c53545e6ffb6ca91aedec032ab4
     name: channelit-utility
     urls:
     - https://tvl-tech.github.io/helm-charts/channelit-utility-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:35:24.8766605+01:00"
+generated: "2025-03-20T16:22:16.8474699+01:00"
